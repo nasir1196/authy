@@ -4,6 +4,7 @@ import {useRouter} from "next/navigation";
 import Link from "next/link";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { CLIENT_RENEG_LIMIT } from "tls";
 
 
 export default function SignupPage() {
@@ -24,6 +25,8 @@ export default function SignupPage() {
                 user
             )
             router.push("/login")
+
+            console.log(user)
 
         } catch (error: any) {
             console.log("Signup failed", error.message)
